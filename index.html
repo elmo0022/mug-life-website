@@ -5,16 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mug Life Coffee</title>
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- NAVBAR -->
     <nav>
-        <h2>Mug Life ☕</h2>
+        <h2>Mug Life Coffee</h2>
         <div class="nav-links">
             <a href="#home">Home</a>
             <a href="#about">About</a>
@@ -23,68 +26,79 @@
         </div>
     </nav>
 
-    <section id="home">
+    <!-- HOME -->
+    <section id="home" class="reveal">
         <div class="hero-overlay">
-            <h1>Welcome to Mug Life ☕</h1>
+            <h1>Welcome to Mug Life</h1>
             <p>Start your day the right way.</p>
-            <a href="#menu" class="hero-btn">View Menu</a>
+            <a href="#order" class="hero-btn">Order Now</a>
         </div>
     </section>
 
-    <section id="about">
+    <!-- ABOUT -->
+    <section id="about" class="reveal">
         <h2>About Us</h2>
         <p>
-            At Mug Life Coffee, we serve cozy drinks, bold flavors, and warm moments.
-            Whether you love a strong espresso or a smooth latte, there’s a cup here for you.
+            Start strong. Stay cozy. Sip Mug Life.
+            We serve handcrafted coffee made for every kind of day,
+            from quick morning espresso shots to smooth afternoon lattes.
         </p>
     </section>
 
-    <section id="menu">
+    <!-- MENU -->
+    <section id="menu" class="reveal">
         <h2>Our Menu</h2>
 
-        <div class="menu-container">
-            <div class="menu-item">
-                <img src="./espresso.jpg" alt="Espresso">
-                <h3>☕ Espresso</h3>
-                <p>Strong and bold coffee shot.</p>
-                <span class="price">$4.50</span>
+        <div class="menu-wrapper">
+            <button class="menu-arrow left" aria-label="Scroll left">&#10094;</button>
+
+            <div class="menu-container">
+                <div class="menu-item">
+                    <img src="./espresso.jpg" alt="Espresso">
+                    <h3>Espresso</h3>
+                    <p>Strong and bold coffee shot.</p>
+                    <span class="price">$4.50</span>
+                </div>
+
+                <div class="menu-item">
+                    <img src="./latte.jpg" alt="Latte">
+                    <h3>Latte</h3>
+                    <p>Smooth blend of coffee and milk.</p>
+                    <span class="price">$5.50</span>
+                </div>
+
+                <div class="menu-item">
+                    <img src="./mocha.jpg" alt="Mocha">
+                    <h3>Mocha</h3>
+                    <p>Chocolate flavored coffee delight.</p>
+                    <span class="price">$5.75</span>
+                </div>
+
+                <div class="menu-item">
+                    <img src="./iced-coffee.jpg" alt="Iced Coffee">
+                    <h3>Iced Coffee</h3>
+                    <p>Chilled coffee for a refreshing taste.</p>
+                    <span class="price">$5.00</span>
+                </div>
             </div>
 
-            <div class="menu-item">
-                <img src="./latte.jpg" alt="Latte">
-                <h3>🥛 Latte</h3>
-                <p>Smooth blend of coffee and milk.</p>
-                <span class="price">$5.50</span>
-            </div>
-
-            <div class="menu-item">
-                <img src="./mocha.jpg" alt="Mocha">
-                <h3>🍫 Mocha</h3>
-                <p>Chocolate flavored coffee delight.</p>
-                <span class="price">$5.75</span>
-            </div>
-
-            <div class="menu-item">
-                <img src="./iced-coffee.jpg" alt="Iced Coffee">
-                <h3>🧊 Iced Coffee</h3>
-                <p>Chilled coffee for a refreshing taste.</p>
-                <span class="price">$5.00</span>
-            </div>
+            <button class="menu-arrow right" aria-label="Scroll right">&#10095;</button>
         </div>
     </section>
 
-    <section id="contact">
+    <!-- CONTACT -->
+    <section id="contact" class="reveal">
         <h2>Contact Us</h2>
-        <p>We’d love to hear from you.</p>
+        <p>Have a question or want to place an order? Send us a message.</p>
 
-        <div class="contact-info">
+        <div class="contact-details">
             <p><strong>Email:</strong> hello@muglifecoffee.com</p>
             <p><strong>Phone:</strong> (555) 123-4567</p>
             <p><strong>Location:</strong> 123 Coffee Street, Your City</p>
             <p><strong>Hours:</strong> Mon–Sat, 7:00 AM – 8:00 PM</p>
         </div>
 
-        <form id="contactForm" class="contact-form">
+        <form class="contact-form" id="contactForm">
             <input type="text" placeholder="Your Name" required>
             <input type="email" placeholder="Your Email" required>
             <textarea placeholder="Your Message" rows="5" required></textarea>
@@ -94,18 +108,66 @@
         <p id="form-message" class="form-message"></p>
     </section>
 
+    <!-- ORDER -->
+    <section class="order-section reveal" id="order">
+        <h2>Ready for your coffee?</h2>
+        <p>Visit us today or send us a message to place an order.</p>
+    </section>
+
+    <!-- FLOATING BUTTON -->
+    <a href="#order" class="floating-order-btn">Order Now</a>
+
+    <!-- FOOTER -->
     <footer>
         <p>© 2026 Mug Life Coffee. All rights reserved.</p>
     </footer>
 
+    <!-- SCROLL REVEAL -->
+    <script>
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll(".reveal");
+
+            reveals.forEach((el) => {
+                const windowHeight = window.innerHeight;
+                const elementTop = el.getBoundingClientRect().top;
+                const visiblePoint = 100;
+
+                if (elementTop < windowHeight - visiblePoint) {
+                    el.classList.add("active");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", revealOnScroll);
+        window.addEventListener("load", revealOnScroll);
+    </script>
+
+    <!-- CAROUSEL ARROWS -->
+    <script>
+        const container = document.querySelector(".menu-container");
+        const leftBtn = document.querySelector(".menu-arrow.left");
+        const rightBtn = document.querySelector(".menu-arrow.right");
+
+        rightBtn.addEventListener("click", () => {
+            container.scrollBy({ left: 300, behavior: "smooth" });
+        });
+
+        leftBtn.addEventListener("click", () => {
+            container.scrollBy({ left: -300, behavior: "smooth" });
+        });
+    </script>
+
+    <!-- CONTACT FORM -->
     <script>
         const contactForm = document.getElementById("contactForm");
         const formMessage = document.getElementById("form-message");
 
         contactForm.addEventListener("submit", function(event) {
             event.preventDefault();
+
             formMessage.textContent = "Thank you! Your message has been sent successfully.";
-            formMessage.style.display = "block";
+            formMessage.style.display = "inline-block";
+
             contactForm.reset();
         });
     </script>
