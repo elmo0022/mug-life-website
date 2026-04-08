@@ -1,71 +1,114 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mug Life Coffee</title>
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- NAV -->
     <nav>
         <h2>Mug Life ☕</h2>
-        <div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
             <a href="#menu">Menu</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
 
-    <!-- HERO -->
     <section id="home">
-        <h1>Welcome to Mug Life ☕</h1>
+        <div class="hero-overlay">
+            <h1>Welcome to Mug Life ☕</h1>
+            <p>Start your day the right way.</p>
+            <a href="#menu" class="hero-btn">View Menu</a>
+        </div>
     </section>
 
-    <!-- MENU -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>
+            At Mug Life Coffee, we serve cozy drinks, bold flavors, and warm moments.
+            Whether you love a strong espresso or a smooth latte, there’s a cup here for you.
+        </p>
+    </section>
+
     <section id="menu">
         <h2>Our Menu</h2>
 
         <div class="menu-container">
-
             <div class="menu-item">
-                <img src="./espresso.jpg">
+                <img src="./espresso.jpg" alt="Espresso">
                 <h3>☕ Espresso</h3>
                 <p>Strong and bold coffee shot.</p>
-                <span>$4.50</span>
+                <span class="price">$4.50</span>
             </div>
 
             <div class="menu-item">
-                <img src="./latte.jpg">
+                <img src="./latte.jpg" alt="Latte">
                 <h3>🥛 Latte</h3>
                 <p>Smooth blend of coffee and milk.</p>
-                <span>$5.50</span>
+                <span class="price">$5.50</span>
             </div>
 
             <div class="menu-item">
-                <img src="./mocha.jpg">
+                <img src="./mocha.jpg" alt="Mocha">
                 <h3>🍫 Mocha</h3>
                 <p>Chocolate flavored coffee delight.</p>
-                <span>$5.75</span>
+                <span class="price">$5.75</span>
             </div>
 
             <div class="menu-item">
-                <img src="./iced-coffee.jpg">
+                <img src="./iced-coffee.jpg" alt="Iced Coffee">
                 <h3>🧊 Iced Coffee</h3>
                 <p>Chilled coffee for a refreshing taste.</p>
-                <span>$5.00</span>
+                <span class="price">$5.00</span>
             </div>
-
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>We’d love to hear from you.</p>
+
+        <div class="contact-info">
+            <p><strong>Email:</strong> hello@muglifecoffee.com</p>
+            <p><strong>Phone:</strong> (555) 123-4567</p>
+            <p><strong>Location:</strong> 123 Coffee Street, Your City</p>
+            <p><strong>Hours:</strong> Mon–Sat, 7:00 AM – 8:00 PM</p>
+        </div>
+
+        <form id="contactForm" class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+
+        <p id="form-message" class="form-message"></p>
+    </section>
+
     <footer>
-        <p>© 2026 Mug Life Coffee</p>
+        <p>© 2026 Mug Life Coffee. All rights reserved.</p>
     </footer>
+
+    <script>
+        const contactForm = document.getElementById("contactForm");
+        const formMessage = document.getElementById("form-message");
+
+        contactForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+            formMessage.textContent = "Thank you! Your message has been sent successfully.";
+            formMessage.style.display = "block";
+            contactForm.reset();
+        });
+    </script>
 
 </body>
 </html>
