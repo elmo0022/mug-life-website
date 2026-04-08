@@ -1,347 +1,54 @@
-/* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* SMOOTH SCROLL */
-html {
-    scroll-behavior: smooth;
-}
-
-/* BODY */
 body {
+    margin: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: #f4e9d8;
-    color: #4b2e2e;
+    background: #f4e9d8;
 }
 
-/* REMOVE UNDERLINES */
-a {
-    text-decoration: none;
-}
-
-/* NAVBAR */
+/* NAV */
 nav {
-    background-color: rgba(75, 46, 46, 0.95);
+    background: #4b2e2e;
     color: white;
-    padding: 15px 40px;
+    padding: 15px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-nav h2 {
-    font-family: 'Playfair Display', serif;
-}
-
-.nav-links a {
-    color: white;
-    margin-left: 20px;
-    font-weight: 500;
-}
-
-/* SECTIONS */
-section {
-    text-align: center;
-    padding: 35px 20px;
 }
 
 /* HERO */
 #home {
-    min-height: 85vh;
-    background: linear-gradient(rgba(43,26,26,0.55), rgba(43,26,26,0.55)), url("images/hero-coffee.jpg");
-    background-size: cover;
-    background-position: center;
+    height: 70vh;
+    background: url("./hero-coffee.jpg") center/cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-#home h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 56px;
     color: white;
 }
 
-#home p {
-    color: #f5e6d3;
-    margin: 15px 0;
-    font-size: 18px;
-}
-
-/* BUTTON + RIPPLE */
-button,
-.hero-btn {
-    position: relative;
-    overflow: hidden;
-    background: white;
-    color: #4b2e2e;
-    padding: 12px 25px;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-button:hover,
-.hero-btn:hover {
-    transform: translateY(-2px);
-}
-
-button::after,
-.hero-btn::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    background: rgba(75, 46, 46, 0.25);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-}
-
-button:active::after,
-.hero-btn:active::after {
-    width: 200px;
-    height: 200px;
-}
-
-/* MENU WRAPPER */
-.menu-wrapper {
-    position: relative;
-}
-
-/* HORIZONTAL MENU */
+/* MENU */
 .menu-container {
     display: flex;
-    gap: 25px;
+    gap: 20px;
     overflow-x: auto;
-    padding: 10px 20px;
-    scroll-behavior: smooth;
-
-    /* SNAP */
-    scroll-snap-type: x mandatory;
-
-    /* DRAG UX */
-    cursor: grab;
-}
-
-.menu-container:active {
-    cursor: grabbing;
-}
-
-/* Hide scrollbar */
-.menu-container::-webkit-scrollbar {
-    display: none;
-}
-.menu-container {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-/* MENU CARD */
-.menu-item {
-    flex: 0 0 auto;
-    width: 250px;
-    min-height: 560px;
-    background: rgba(255, 255, 255, 0.92);
     padding: 20px;
-    border-radius: 18px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(6px);
+}
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.menu-item {
+    background: white;
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
     text-align: center;
-
-    /* SNAP ALIGN */
-    scroll-snap-align: center;
 }
 
-.menu-item:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 18px 36px rgba(75, 46, 46, 0.18);
-}
-
-/* IMAGE */
 .menu-item img {
     width: 100%;
-    height: 260px;
+    height: 200px;
     object-fit: cover;
-    border-radius: 14px;
-    transition: transform 0.4s ease;
-}
-
-.menu-item img:hover {
-    transform: scale(1.08);
-}
-
-/* TITLE */
-.menu-item h3 {
-    margin-top: 12px;
-    margin-bottom: 10px;
-    min-height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* DESCRIPTION */
-.menu-item p {
-    min-height: 60px;
-    line-height: 1.4;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* PRICE */
-.price {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 6px 14px;
-    background: #f4e9d8;
-    border-radius: 999px;
-    font-weight: 500;
-}
-
-/* ARROWS */
-.menu-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #4b2e2e;
-    color: white;
-    border: none;
-    padding: 10px 14px;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 10;
-    transition: 0.3s;
-}
-
-.menu-arrow:hover {
-    background: #2f1c1c;
-}
-
-.menu-arrow.left {
-    left: -10px;
-}
-
-.menu-arrow.right {
-    right: -10px;
-}
-
-/* CONTACT FORM */
-.contact-form {
-    max-width: 600px;
-    margin: 25px auto 0;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 14px 16px;
-    border: 1px solid #d8c7b2;
-    border-radius: 10px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 15px;
-    background-color: white;
-    color: #4b2e2e;
-    outline: none;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: #4b2e2e;
-    box-shadow: 0 0 0 3px rgba(75, 46, 46, 0.08);
-}
-
-/* ✅ FIXED SUCCESS MESSAGE */
-.form-message {
-    display: none;
-    margin-top: 15px;
-    font-weight: 500;
-    color: #2f6b3b;
-    background-color: #e8f7ec;
-    border: 1px solid #b7e4c7;
-    padding: 12px 16px;
-    border-radius: 10px;
-}
-
-/* FLOATING BUTTON */
-.floating-order-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #4b2e2e;
-    color: white;
-    padding: 12px 18px;
-    border-radius: 50px;
-    transition: 0.3s;
-    z-index: 1001;
-}
-
-.floating-order-btn:hover {
-    transform: scale(1.08);
 }
 
 /* FOOTER */
 footer {
-    background-color: #2f1c1c;
+    background: #2f1c1c;
     color: white;
     text-align: center;
-    padding: 18px 20px;
-    font-size: 14px;
-}
-
-/* SCROLL REVEAL */
-.reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease;
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .menu-container {
-        gap: 20px;
-        padding: 10px 15px;
-    }
-
-    .menu-item {
-        width: 85%;
-        min-height: auto;
-    }
-
-    .menu-item img {
-        height: 220px;
-    }
-
-    #home h1 {
-        font-size: 40px;
-    }
+    padding: 10px;
 }
