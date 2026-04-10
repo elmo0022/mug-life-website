@@ -39,34 +39,40 @@
     <section id="menu" class="reveal">
         <h2>Our Menu</h2>
 
-        <div class="menu-grid">
-            <div class="menu-item">
-                <img src="espresso.jpg" alt="Espresso">
-                <h3>☕ Espresso</h3>
-                <p>Strong and bold coffee shot.</p>
-                <span class="price">$4.50</span>
+        <div class="menu-wrapper">
+            <button class="menu-arrow left" type="button" aria-label="Scroll left">&#10094;</button>
+
+            <div class="menu-container">
+                <div class="menu-item">
+                    <img src="espresso.jpg" alt="Espresso">
+                    <h3>☕ Espresso</h3>
+                    <p>Strong and bold coffee shot.</p>
+                    <span class="price">$4.50</span>
+                </div>
+
+                <div class="menu-item">
+                    <img src="latte.jpg" alt="Latte">
+                    <h3>🥛 Latte</h3>
+                    <p>Smooth blend of coffee and milk.</p>
+                    <span class="price">$5.50</span>
+                </div>
+
+                <div class="menu-item">
+                    <img src="mocha.jpg" alt="Mocha">
+                    <h3>🍫 Mocha</h3>
+                    <p>Chocolate flavored coffee delight.</p>
+                    <span class="price">$5.75</span>
+                </div>
+
+                <div class="menu-item">
+                    <img src="iced-coffee.jpg" alt="Iced Coffee">
+                    <h3>🧊 Iced Coffee</h3>
+                    <p>Chilled coffee for a refreshing taste.</p>
+                    <span class="price">$5.00</span>
+                </div>
             </div>
 
-            <div class="menu-item">
-                <img src="latte.jpg" alt="Latte">
-                <h3>🥛 Latte</h3>
-                <p>Smooth blend of coffee and milk.</p>
-                <span class="price">$5.50</span>
-            </div>
-
-            <div class="menu-item">
-                <img src="mocha.jpg" alt="Mocha">
-                <h3>🍫 Mocha</h3>
-                <p>Chocolate flavored coffee delight.</p>
-                <span class="price">$5.75</span>
-            </div>
-
-            <div class="menu-item">
-                <img src="iced-coffee.jpg" alt="Iced Coffee">
-                <h3>🧊 Iced Coffee</h3>
-                <p>Chilled coffee for a refreshing taste.</p>
-                <span class="price">$5.00</span>
-            </div>
+            <button class="menu-arrow right" type="button" aria-label="Scroll right">&#10095;</button>
         </div>
     </section>
 
@@ -84,10 +90,9 @@
         <p id="form-message" class="form-message"></p>
     </section>
 
-    <section id="order" class="order-section reveal">
+    <section class="order-section reveal" id="order">
         <h2>Ready for your coffee?</h2>
         <p>Your next favorite cup is waiting ☕</p>
-        <a href="#menu" class="hero-btn">Browse Menu</a>
     </section>
 
     <a href="#order" class="floating-order-btn">☕ Order Now</a>
@@ -113,6 +118,26 @@
 
         window.addEventListener("scroll", revealOnScroll);
         window.addEventListener("load", revealOnScroll);
+    </script>
+
+    <script>
+        const container = document.querySelector(".menu-container");
+        const leftBtn = document.querySelector(".menu-arrow.left");
+        const rightBtn = document.querySelector(".menu-arrow.right");
+
+        rightBtn.addEventListener("click", () => {
+            container.scrollBy({
+                left: 300,
+                behavior: "smooth"
+            });
+        });
+
+        leftBtn.addEventListener("click", () => {
+            container.scrollBy({
+                left: -300,
+                behavior: "smooth"
+            });
+        });
     </script>
 
     <script>
