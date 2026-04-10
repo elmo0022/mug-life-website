@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mug Life Coffee</title>
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- NAVBAR -->
     <nav>
         <h2>Mug Life</h2>
         <div class="nav-links">
@@ -23,6 +25,7 @@
         </div>
     </nav>
 
+    <!-- HOME -->
     <section id="home" class="reveal">
         <div class="hero-overlay">
             <h1>Welcome to Mug Life ☕</h1>
@@ -31,51 +34,48 @@
         </div>
     </section>
 
+    <!-- ABOUT -->
     <section id="about" class="reveal">
         <h2>About Us</h2>
         <p>Start strong. Stay cozy. Sip Mug Life ☕</p>
     </section>
 
+    <!-- MENU -->
     <section id="menu" class="reveal">
         <h2>Our Menu</h2>
 
-        <div class="menu-wrapper">
-            <button class="menu-arrow left" type="button" aria-label="Scroll left">&#10094;</button>
-
-            <div class="menu-container">
-                <div class="menu-item">
-                    <img src="espresso.jpg" alt="Espresso">
-                    <h3>☕ Espresso</h3>
-                    <p>Strong and bold coffee shot.</p>
-                    <span class="price">$4.50</span>
-                </div>
-
-                <div class="menu-item">
-                    <img src="latte.jpg" alt="Latte">
-                    <h3>🥛 Latte</h3>
-                    <p>Smooth blend of coffee and milk.</p>
-                    <span class="price">$5.50</span>
-                </div>
-
-                <div class="menu-item">
-                    <img src="mocha.jpg" alt="Mocha">
-                    <h3>🍫 Mocha</h3>
-                    <p>Chocolate flavored coffee delight.</p>
-                    <span class="price">$5.75</span>
-                </div>
-
-                <div class="menu-item">
-                    <img src="iced-coffee.jpg" alt="Iced Coffee">
-                    <h3>🧊 Iced Coffee</h3>
-                    <p>Chilled coffee for a refreshing taste.</p>
-                    <span class="price">$5.00</span>
-                </div>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="espresso.jpg" alt="Espresso">
+                <h3>☕ Espresso</h3>
+                <p>Strong and bold coffee shot.</p>
+                <span class="price">$4.50</span>
             </div>
 
-            <button class="menu-arrow right" type="button" aria-label="Scroll right">&#10095;</button>
+            <div class="menu-item">
+                <img src="latte.jpg" alt="Latte">
+                <h3>🥛 Latte</h3>
+                <p>Smooth blend of coffee and milk.</p>
+                <span class="price">$5.50</span>
+            </div>
+
+            <div class="menu-item">
+                <img src="mocha.jpg" alt="Mocha">
+                <h3>🍫 Mocha</h3>
+                <p>Chocolate flavored coffee delight.</p>
+                <span class="price">$5.75</span>
+            </div>
+
+            <div class="menu-item">
+                <img src="iced-coffee.jpg" alt="Iced Coffee">
+                <h3>🧊 Iced Coffee</h3>
+                <p>Chilled coffee for a refreshing taste.</p>
+                <span class="price">$5.00</span>
+            </div>
         </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact" class="reveal">
         <h2>Contact Us</h2>
         <p>Have a question or want to place an order? Send us a message ☕</p>
@@ -90,17 +90,21 @@
         <p id="form-message" class="form-message"></p>
     </section>
 
-    <section class="order-section reveal" id="order">
+    <!-- ORDER -->
+    <section id="order" class="order-section reveal">
         <h2>Ready for your coffee?</h2>
         <p>Your next favorite cup is waiting ☕</p>
     </section>
 
+    <!-- FLOATING BUTTON -->
     <a href="#order" class="floating-order-btn">☕ Order Now</a>
 
+    <!-- FOOTER -->
     <footer>
         <p>© 2026 Mug Life Coffee. All rights reserved.</p>
     </footer>
 
+    <!-- SCROLL REVEAL -->
     <script>
         function revealOnScroll() {
             const reveals = document.querySelectorAll(".reveal");
@@ -120,31 +124,12 @@
         window.addEventListener("load", revealOnScroll);
     </script>
 
-    <script>
-        const container = document.querySelector(".menu-container");
-        const leftBtn = document.querySelector(".menu-arrow.left");
-        const rightBtn = document.querySelector(".menu-arrow.right");
-
-        rightBtn.addEventListener("click", () => {
-            container.scrollBy({
-                left: 300,
-                behavior: "smooth"
-            });
-        });
-
-        leftBtn.addEventListener("click", () => {
-            container.scrollBy({
-                left: -300,
-                behavior: "smooth"
-            });
-        });
-    </script>
-
+    <!-- CONTACT FORM MESSAGE -->
     <script>
         const contactForm = document.getElementById("contactForm");
         const formMessage = document.getElementById("form-message");
 
-        contactForm.addEventListener("submit", function (event) {
+        contactForm.addEventListener("submit", function(event) {
             event.preventDefault();
             formMessage.textContent = "Thank you! Your message has been sent successfully.";
             formMessage.style.display = "inline-block";
