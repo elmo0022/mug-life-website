@@ -37,26 +37,21 @@ nav {
 
 nav h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 28px;
-}
-
-.nav-links {
-    display: flex;
-    gap: 20px;
 }
 
 .nav-links a {
     color: white;
+    margin-left: 20px;
     font-weight: 500;
 }
 
-/* SECTION SPACING */
+/* SECTIONS */
 section {
     text-align: center;
-    padding: 60px 20px;
+    padding: 35px 20px;
 }
 
-/* FIX ANCHOR SCROLL WITH STICKY NAV */
+/* Fix anchor scroll under sticky navbar */
 #home,
 #about,
 #menu,
@@ -74,7 +69,6 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 100px 20px;
 }
 
 .hero-overlay {
@@ -86,16 +80,15 @@ section {
     font-family: 'Playfair Display', serif;
     font-size: 56px;
     color: white;
-    margin-bottom: 15px;
 }
 
 #home p {
     color: #f5e6d3;
-    margin-bottom: 20px;
-    font-size: 20px;
+    margin: 15px 0 20px;
+    font-size: 18px;
 }
 
-/* BUTTONS */
+/* BUTTON + RIPPLE */
 button,
 .hero-btn {
     position: relative;
@@ -114,7 +107,6 @@ button,
 button:hover,
 .hero-btn:hover {
     transform: translateY(-2px);
-    background-color: #f0dfcb;
 }
 
 button::after,
@@ -125,7 +117,7 @@ button::after,
     left: 50%;
     width: 0;
     height: 0;
-    background: rgba(75, 46, 46, 0.18);
+    background: rgba(75, 46, 46, 0.25);
     border-radius: 50%;
     transform: translate(-50%, -50%);
 }
@@ -136,73 +128,83 @@ button:active::after,
     height: 200px;
 }
 
-/* HEADINGS */
-#about h2,
-#menu h2,
-#contact h2,
-#order h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    margin-bottom: 14px;
+/* MENU WRAPPER */
+.menu-wrapper {
+    position: relative;
 }
 
-#about p,
-#contact > p,
-#order p {
-    max-width: 700px;
-    margin: 0 auto;
-    line-height: 1.6;
-}
-
-/* MENU GRID */
-.menu-grid {
-    max-width: 1200px;
-    margin: 25px auto 0;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+/* HORIZONTAL MENU */
+.menu-container {
+    display: flex;
     gap: 25px;
+    overflow-x: auto;
+    padding: 10px 20px;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    cursor: grab;
 }
 
+.menu-container:active {
+    cursor: grabbing;
+}
+
+.menu-container::-webkit-scrollbar {
+    display: none;
+}
+
+.menu-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* MENU CARD */
 .menu-item {
-    background: rgba(255, 255, 255, 0.95);
-    min-height: 520px;
+    flex: 0 0 auto;
+    width: 250px;
+    min-height: 560px;
+    background: rgba(255, 255, 255, 0.92);
     padding: 20px;
     border-radius: 18px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.10);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    border: 1px solid rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(6px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    scroll-snap-align: center;
 }
 
 .menu-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 18px 36px rgba(75, 46, 46, 0.16);
+    transform: translateY(-12px);
+    box-shadow: 0 18px 36px rgba(75, 46, 46, 0.18);
 }
 
+/* IMAGE */
 .menu-item img {
     width: 100%;
-    height: 240px;
+    height: 260px;
     object-fit: cover;
     border-radius: 14px;
     transition: transform 0.4s ease;
 }
 
 .menu-item img:hover {
-    transform: scale(1.04);
+    transform: scale(1.08);
 }
 
+/* TITLE */
 .menu-item h3 {
-    margin: 14px 0 10px;
+    margin-top: 12px;
+    margin-bottom: 10px;
     min-height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+/* DESCRIPTION */
 .menu-item p {
     min-height: 60px;
     line-height: 1.4;
@@ -211,13 +213,41 @@ button:active::after,
     justify-content: center;
 }
 
+/* PRICE */
 .price {
     display: inline-block;
-    margin-top: 12px;
+    margin-top: 10px;
     padding: 6px 14px;
     background: #f4e9d8;
     border-radius: 999px;
     font-weight: 500;
+}
+
+/* ARROWS */
+.menu-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #4b2e2e;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.3s;
+}
+
+.menu-arrow:hover {
+    background: #2f1c1c;
+}
+
+.menu-arrow.left {
+    left: -10px;
+}
+
+.menu-arrow.right {
+    right: -10px;
 }
 
 /* CONTACT FORM */
@@ -264,13 +294,16 @@ button:active::after,
 .order-section {
     background-color: #4b2e2e;
     color: white;
-    padding: 100px 20px;
-    min-height: 300px;
+    padding: 90px 20px;
+    min-height: 260px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 14px;
+}
+
+.order-section h2 {
+    margin-bottom: 12px;
 }
 
 .order-section p {
@@ -288,11 +321,10 @@ button:active::after,
     border-radius: 50px;
     transition: 0.3s;
     z-index: 1001;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
 }
 
 .floating-order-btn:hover {
-    transform: scale(1.06);
+    transform: scale(1.08);
 }
 
 /* FOOTER */
@@ -316,45 +348,20 @@ footer {
     transform: translateY(0);
 }
 
-/* TABLET */
-@media (max-width: 1100px) {
-    .menu-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
 /* MOBILE */
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
         gap: 10px;
-        padding: 15px 20px;
     }
 
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
-    }
-
-    .nav-links a {
-        margin-left: 0;
-    }
-
-    #home h1 {
-        font-size: 40px;
-    }
-
-    #home p {
-        font-size: 18px;
-    }
-
-    .menu-grid {
-        grid-template-columns: 1fr;
-        max-width: 420px;
+    .menu-container {
+        gap: 20px;
+        padding: 10px 15px;
     }
 
     .menu-item {
+        width: 85%;
         min-height: auto;
     }
 
@@ -362,8 +369,15 @@ footer {
         height: 220px;
     }
 
-    .floating-order-btn {
-        bottom: 15px;
-        right: 15px;
+    #home h1 {
+        font-size: 40px;
+    }
+
+    .menu-arrow.left {
+        left: 0;
+    }
+
+    .menu-arrow.right {
+        right: 0;
     }
 }
