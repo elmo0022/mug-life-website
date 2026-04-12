@@ -1,141 +1,315 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mug Life Coffee</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mug Life Coffee</title>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- NAVBAR -->
-    <nav>
-        <h2>Mug Life</h2>
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#menu">Menu</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
+  <header class="header">
+    <div class="container navbar">
+      <a href="#home" class="logo">☕ Mug Life</a>
 
-    <!-- HOME -->
-    <section id="home" class="reveal">
-        <div class="hero-overlay">
-            <h1>Welcome to Mug Life ☕</h1>
-            <p>Start your day the right way ☕</p>
-            <a href="#order" class="hero-btn">☕ Order Now</a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a href="#menu" class="nav-cta">Order Coffee</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-wrapper">
+        <div class="hero-text">
+          <span class="hero-tag">Freshly Brewed • Warmly Served</span>
+          <h1>Welcome to Mug Life</h1>
+          <p>
+            Where every cup tells a story. Discover handcrafted coffee, calming spaces,
+            and slow moments worth savoring every day.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#menu" class="btn">Explore Menu</a>
+            <a href="#about" class="btn btn-secondary">Our Story</a>
+          </div>
         </div>
+
+        <div class="hero-image-box">
+          <img src="images/hero-coffee.jpg" alt="Fresh coffee served at Mug Life" class="hero-image">
+        </div>
+      </div>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="reveal">
-        <h2>About Us</h2>
-        <p>Start strong. Stay cozy. Sip Mug Life ☕</p>
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text">
+            <span class="section-label">Our Story</span>
+            <h2>Made for coffee lovers who value comfort, quality, and calm.</h2>
+            <p>
+              At Mug Life, coffee is more than a quick drink. It is a chance to pause,
+              recharge, and enjoy something crafted with care. Every cup is made to bring
+              warmth, flavor, and a little calm into your day.
+            </p>
+            <p>
+              From freshly roasted beans to smooth signature blends, we focus on simple ingredients,
+              bold aroma, and a cozy atmosphere that makes every visit feel memorable.
+            </p>
+          </div>
+
+          <div class="about-features">
+            <article class="feature-card">
+              <div class="feature-icon">☕</div>
+              <h3>Fresh Beans</h3>
+              <p>Carefully selected and roasted for rich aroma and balanced flavor.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">✨</div>
+              <h3>Handcrafted Drinks</h3>
+              <p>Prepared with precision and care using quality ingredients every time.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">🪑</div>
+              <h3>Cozy Atmosphere</h3>
+              <p>A relaxed environment perfect for quiet mornings and friendly meetups.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">❤</div>
+              <h3>Warm Service</h3>
+              <p>Friendly hospitality that makes every guest feel welcome and valued.</p>
+            </article>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- MENU -->
-    <section id="menu" class="reveal">
-        <h2>Our Menu</h2>
+    <section id="menu" class="menu-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Popular Drinks</span>
+          <h2>Our Menu</h2>
+          <p>Freshly prepared drinks made with premium ingredients and thoughtful craftsmanship.</p>
+        </div>
 
         <div class="menu-grid">
-            <div class="menu-item">
-                <img src="espresso.jpg" alt="Espresso">
-                <h3>☕ Espresso</h3>
-                <p>Strong and bold coffee shot.</p>
-                <span class="price">$4.50</span>
+          <article class="menu-card">
+            <span class="menu-badge">Best Seller</span>
+            <img src="images/espresso.jpg" alt="Cup of espresso" class="menu-card-image">
+            <div class="menu-card-content">
+              <h3>Espresso</h3>
+              <p>Rich, bold, and perfectly brewed for a smooth yet powerful coffee experience.</p>
+              <div class="menu-meta">
+                <span class="menu-price">$4.50</span>
+                <span class="menu-tag">Classic</span>
+              </div>
             </div>
+          </article>
 
-            <div class="menu-item">
-                <img src="latte.jpg" alt="Latte">
-                <h3>🥛 Latte</h3>
-                <p>Smooth blend of coffee and milk.</p>
-                <span class="price">$5.50</span>
+          <article class="menu-card">
+            <img src="images/iced-coffee.jpg" alt="Cup of iced coffee" class="menu-card-image">
+            <div class="menu-card-content">
+              <h3>Iced Coffee</h3>
+              <p>Refreshing, smooth, and lightly sweetened for a cool and energizing pick-me-up.</p>
+              <div class="menu-meta">
+                <span class="menu-price">$5.50</span>
+                <span class="menu-tag">Cold Brewed</span>
+              </div>
             </div>
+          </article>
 
-            <div class="menu-item">
-                <img src="mocha.jpg" alt="Mocha">
-                <h3>🍫 Mocha</h3>
-                <p>Chocolate flavored coffee delight.</p>
-                <span class="price">$5.75</span>
+          <article class="menu-card">
+            <img src="images/latte.jpg" alt="Cup of vanilla latte" class="menu-card-image">
+            <div class="menu-card-content">
+              <h3>Vanilla Latte</h3>
+              <p>A creamy blend of espresso, milk, and vanilla with a warm and comforting finish.</p>
+              <div class="menu-meta">
+                <span class="menu-price">$6.00</span>
+                <span class="menu-tag">Customer Favorite</span>
+              </div>
             </div>
+          </article>
 
-            <div class="menu-item">
-                <img src="iced-coffee.jpg" alt="Iced Coffee">
-                <h3>🧊 Iced Coffee</h3>
-                <p>Chilled coffee for a refreshing taste.</p>
-                <span class="price">$5.00</span>
+          <article class="menu-card">
+            <img src="images/mocha.jpg" alt="Cup of mocha" class="menu-card-image">
+            <div class="menu-card-content">
+              <h3>Mocha</h3>
+              <p>Chocolate, espresso, and steamed milk combined into a sweet and timeless favorite.</p>
+              <div class="menu-meta">
+                <span class="menu-price">$6.50</span>
+                <span class="menu-tag">Sweet & Smooth</span>
+              </div>
             </div>
+          </article>
         </div>
+      </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="reveal">
-        <h2>Contact Us</h2>
-        <p>Have a question or want to place an order? Send us a message ☕</p>
+    <section id="reviews" class="reviews-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Guest Reviews</span>
+          <h2>What People Love About Mug Life</h2>
+          <p>Warm service, great coffee, and a space that keeps people coming back.</p>
+        </div>
 
-        <form class="contact-form" id="contactForm">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
+        <div class="reviews-grid">
+          <article class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p>
+              “The coffee is consistently amazing, and the atmosphere feels calm and welcoming every time.
+              It is the perfect place to slow down and enjoy a quiet morning.”
+            </p>
+            <h3>Sarah M.</h3>
+            <span class="review-role">Local Customer</span>
+          </article>
 
-        <p id="form-message" class="form-message"></p>
+          <article class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p>
+              “My favorite place for a latte and quiet work sessions. The service always feels thoughtful,
+              and the drinks are made with real consistency.”
+            </p>
+            <h3>David R.</h3>
+            <span class="review-role">Regular Guest</span>
+          </article>
+
+          <article class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p>
+              “Beautiful space, rich coffee, and the kind of café you want to stay in longer than planned.
+              Mug Life feels warm, polished, and memorable.”
+            </p>
+            <h3>Lina A.</h3>
+            <span class="review-role">Coffee Enthusiast</span>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <!-- ORDER -->
-    <section id="order" class="order-section reveal">
-        <h2>Ready for your coffee?</h2>
-        <p>Your next favorite cup is waiting ☕</p>
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <span class="section-label">Get in Touch</span>
+            <h2>We would love to hear from you.</h2>
+            <p>
+              Whether you want to ask about our drinks, share feedback, or plan your next visit,
+              send us a message and we will get back to you soon.
+            </p>
+
+            <div class="contact-details">
+              <article class="contact-item">
+                <div class="contact-icon">📍</div>
+                <div>
+                  <h3>Location</h3>
+                  <p>123 Coffee Street, Downtown</p>
+                </div>
+              </article>
+
+              <article class="contact-item">
+                <div class="contact-icon">✉️</div>
+                <div>
+                  <h3>Email</h3>
+                  <p>hello@muglife.com</p>
+                </div>
+              </article>
+
+              <article class="contact-item">
+                <div class="contact-icon">📞</div>
+                <div>
+                  <h3>Phone</h3>
+                  <p>+1 (555) 123-4567</p>
+                </div>
+              </article>
+
+              <article class="contact-item">
+                <div class="contact-icon">🕒</div>
+                <div>
+                  <h3>Hours</h3>
+                  <p>Mon - Sun: 8:00 AM - 9:00 PM</p>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <form class="contact-form">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input id="name" type="text" placeholder="Enter your name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Your Email</label>
+                <input id="email" type="email" placeholder="Enter your email" required>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" placeholder="Write your message" rows="6" required></textarea>
+              </div>
+
+              <button type="submit" class="btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </section>
+  </main>
 
-    <!-- FLOATING BUTTON -->
-    <a href="#order" class="floating-order-btn">☕ Order Now</a>
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3 class="footer-logo">☕ Mug Life</h3>
+        <p class="footer-text">
+          Fresh coffee. Slow moments. Warm hospitality in every cup.
+        </p>
+      </div>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>© 2026 Mug Life Coffee. All rights reserved.</p>
-    </footer>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
 
-    <!-- SCROLL REVEAL -->
-    <script>
-        function revealOnScroll() {
-            const reveals = document.querySelectorAll(".reveal");
+      <div class="footer-col">
+        <h4>Opening Hours</h4>
+        <p>Monday - Friday: 8:00 AM - 9:00 PM</p>
+        <p>Saturday - Sunday: 9:00 AM - 10:00 PM</p>
+      </div>
 
-            reveals.forEach((el) => {
-                const windowHeight = window.innerHeight;
-                const elementTop = el.getBoundingClientRect().top;
-                const visiblePoint = 100;
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>hello@muglife.com</p>
+        <p>+1 (555) 123-4567</p>
+        <p>123 Coffee Street, Downtown</p>
+      </div>
+    </div>
 
-                if (elementTop < windowHeight - visiblePoint) {
-                    el.classList.add("active");
-                }
-            });
-        }
-
-        window.addEventListener("scroll", revealOnScroll);
-        window.addEventListener("load", revealOnScroll);
-    </script>
-
-    <!-- CONTACT FORM MESSAGE -->
-    <script>
-        const contactForm = document.getElementById("contactForm");
-        const formMessage = document.getElementById("form-message");
-
-        contactForm.addEventListener("submit", function(event) {
-            event.preventDefault();
-            formMessage.textContent = "Thank you! Your message has been sent successfully.";
-            formMessage.style.display = "inline-block";
-            contactForm.reset();
-        });
-    </script>
+    <div class="footer-bottom">
+      <p>© 2026 Mug Life. All rights reserved.</p>
+    </div>
+  </footer>
 
 </body>
 </html>
